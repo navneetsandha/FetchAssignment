@@ -62,7 +62,16 @@ This method ensures that we can find the fake bar in just two weighings.
 - The program opens the website http://sdetchallenge.fetch.com/. 
 - The program simulates the weighings of the gold bars. 
 - The program identifies the fake gold bar based on the weight discrepancies. 
-- The program prints the results
+- The program prints the results. Ex:
+
+```
+Fake Gold Bar is: 4
+Alert message: Yay! You find it!
+Total # of weighings: 2
+List of all weighings:
+[0,1,2] > [3,4,5]
+[3] > [4]
+```
 
 ## Dependencies
 

@@ -23,13 +23,13 @@ public class CommonFunctions {
 
     public static int[] identifyFakeGroup(String weighResult, int[] group1, int[] group2, int[] group3) {
         if (weighResult.contains("=")) {
-            System.out.println("both groups are equal, fake bar must be in group3");
+            // both groups are equal, fake gold bar must be in group3
             return group3;
         } else if (weighResult.contains("<")) {
-            System.out.println("fake bar is in group 1");
+            //fake gold bar is in group 1
             return group1;
         } else if (weighResult.contains(">")) {
-            System.out.println("fake bar is in group 3");
+            //fake gold bar is in group 3
             return group2;
         } else {
             throw new IllegalArgumentException("WeighResult is not valid");
@@ -38,15 +38,12 @@ public class CommonFunctions {
 
     public static int identifyFakeBarInGroup(String weighResult, int[] group) {
         if (weighResult.contains("=")) {
-            System.out.println("fake gold bar is: " + group[2]);
             // third bar is the fake one
             return group[2];
         } else if (weighResult.contains("<")) {
-            System.out.println("fake gold bar is: " + group[0]);
             // first bar is the fake one
             return group[0];
         } else {
-            System.out.println("fake gold bar is: " + group[1]);
             // second bar is the fake one
             return group[1];
         }

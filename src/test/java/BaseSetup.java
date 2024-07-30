@@ -9,7 +9,6 @@ public class BaseSetup {
     static WebDriver driver;
     public static PageClass pageClass;
     public static CommonFunctions commonFunctions;
-
     @BeforeSuite
     public void setUp() {
         driver = DriverSetup.setupDriver();
@@ -17,7 +16,6 @@ public class BaseSetup {
         commonFunctions = new CommonFunctions(driver);
         driver.get("http://sdetchallenge.fetch.com");
     }
-
     @AfterSuite
     public void tearDown(){
         driver.quit();

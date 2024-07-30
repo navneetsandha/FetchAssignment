@@ -39,7 +39,6 @@ public class PageClass {
     public PageClass(WebDriver driver) {
         this.driver = driver;
         PageFactory.initElements(driver, this);
-
     }
 
     public void typeIntoGrids(int[] leftGridValues, int[] rightGridValues) {
@@ -81,7 +80,7 @@ public class PageClass {
         return result;
     }
 
-    // just to get the number of total weighings element
+    // get the number of total weighings element
     public List<WebElement> getWeighResultElement(){
         return weighResult;
     }

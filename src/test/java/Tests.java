@@ -1,3 +1,4 @@
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import static org.fetch.CommonFunctions.identifyFakeBarInGroup;
@@ -25,15 +26,14 @@ public class Tests extends BaseSetup {
         pageClass.typeIntoGrids(new int[]{fakeGroup[0]}, new int[]{fakeGroup[1]});
         pageClass.clickWeighButton();
         weighResult = pageClass.getLatestWeightResult();
-        System.out.println("second weight result is: " + weighResult);
         int fakeBar = identifyFakeBarInGroup(weighResult, fakeGroup);
 
         // click on the fake bar returned by identifyFakeBarInGroup
-        System.out.println("fake bar is: " + fakeBar);
         pageClass.clickOnCoin(fakeBar);
         String alertMessage = commonFunctions.captureAlertMessage();
-        System.out.println("Fake Gold Bar: " + fakeBar + ", Alert message: " + alertMessage);
-
+        Assert.assertEquals(alertMessage, "Yay! You find it!");
+        System.out.println("Fake Gold Bar is: " + fakeBar);
+        System.out.println("Alert message: " + alertMessage);
         System.out.println("Total # of weighings: " + pageClass.getWeighResultElement().size());
         System.out.println("List of all weighings: \n" + pageClass.getMainWeighResultElement().getText());
     }
